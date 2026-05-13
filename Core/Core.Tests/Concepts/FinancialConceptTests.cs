@@ -20,6 +20,15 @@ namespace Empiria.Tests.Financial.Concepts {
     #region Facts
 
     [Fact]
+    public void Should_Read_All_Financial_Concepts() {
+      var sut = BaseObject.GetFullList<FinancialConcept>();
+
+      Assert.NotNull(sut);
+      Assert.NotEmpty(sut);
+    }
+
+
+    [Fact]
     public void Should_Parse_All_Financial_Concepts() {
       var list = BaseObject.GetFullList<FinancialConcept>();
 
@@ -30,15 +39,6 @@ namespace Empiria.Tests.Financial.Concepts {
         Assert.NotNull(sut.GetAllChildren());
         Assert.NotNull(sut.GetChildren());
       }
-    }
-
-
-    [Fact]
-    public void Should_Read_All_Financial_Concepts() {
-      var sut = BaseObject.GetFullList<FinancialConcept>();
-
-      Assert.NotNull(sut);
-      Assert.NotEmpty(sut);
     }
 
 
