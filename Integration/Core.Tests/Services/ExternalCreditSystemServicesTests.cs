@@ -24,7 +24,6 @@ namespace Empiria.Tests.Financial.Integation {
     public void Should_Execute_TryGetCreditAccountData() {
 
       var service = new ExternalCreditSystemServices();
-
       ICreditAccountData sut = service.TryGetCreditWithAccountNo("12345");
 
       Assert.NotNull(sut);
@@ -37,7 +36,6 @@ namespace Empiria.Tests.Financial.Integation {
     public void Should_Execute_TryGetCreditNo() {
 
       var service = new ExternalCreditSystemServices();
-
       ICreditAccountData sut = service.TryGetCreditWithAccountNo("12345");
 
       Assert.NotNull(sut);
