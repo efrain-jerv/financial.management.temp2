@@ -17,21 +17,6 @@ namespace Empiria.Tests.Billing {
   public class SATBillXmlReaderTests {
 
     [Fact]
-    public void Should_Read_A_Fuel_Consumption_Bill_From_A_Xml_String() {
-
-      string xmlFilePath = TestingConstants.XML_FUEL_CONSUMPTION_BILL_FILE_PATH;
-
-      var xmlText = System.IO.File.ReadAllText(xmlFilePath);
-
-      var reader = new SATFuelConsumptionBillXmlReader(xmlText);
-
-      SATFuelConsumptionBillDto sut = reader.ReadAsFuelConsumptionBillDto();
-
-      Assert.NotNull(sut);
-    }
-
-
-    [Fact]
     public void Should_Read_An_Air_Transport_Bill_From_A_Xml_String() {
 
       string xmlFilePath = TestingConstants.XML_AIR_TRANSPORT_BILL_FILE_PATH;
@@ -45,6 +30,21 @@ namespace Empiria.Tests.Billing {
       Assert.NotNull(sut);
     }
 
+
+    [Fact]
+    public void Should_Read_A_Fuel_Consumption_Bill_From_A_Xml_String() {
+
+      string xmlFilePath = TestingConstants.XML_FUEL_CONSUMPTION_BILL_FILE_PATH;
+
+      var xmlText = System.IO.File.ReadAllText(xmlFilePath);
+
+      var reader = new SATFuelConsumptionBillXmlReader(xmlText);
+
+      SATFuelConsumptionBillDto sut = reader.ReadAsFuelConsumptionBillDto();
+
+      Assert.NotNull(sut);
+    }
+    
     
     [Fact]
     public void Should_Read_A_Bill_From_A_Xml_String() {
